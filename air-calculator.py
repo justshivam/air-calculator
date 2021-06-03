@@ -114,6 +114,7 @@ while True:
                     arr[ind] = temp
                     ind += 1
                 else:
+                    ind = 0
                     cv2.putText(img, "INVALID OPTION", (w-200, 20),
                                 cv2.FONT_HERSHEY_PLAIN, 1, (0, 0, 255), 1)
             else:
