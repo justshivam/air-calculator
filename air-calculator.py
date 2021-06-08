@@ -46,7 +46,9 @@ thickness = 2
 stage1, stage2, stage3, stage4 = False, False, False, False
 cap = cv2.VideoCapture(0)
 detector = hd()
-while True:
+
+run = True
+while run:
     success, img = cap.read()
     img = detector.findHands(img)
     handcount = detector.numberOfHands()
@@ -150,4 +152,7 @@ while True:
                     stage4 = False
 
     cv2.imshow("Air-Calculator by Shivam", img)
-    cv2.waitKey(1)
+    keypress = cv2.waitKey(1)
+    if keypress == ord('q'):
+        break
+cv2.destroyAllWindows()
